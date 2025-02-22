@@ -3,7 +3,7 @@
 body {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    background-color: #0d0d0d;
+    background-color: #000000;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ body {
 
 h1 {
     font-size: 32px;
-    text-shadow: 0 0 10px #1333c2, 0 0 20px #1333c2;
+    text-shadow: 0 0 10px #c5e72b, 0 0 20px #1333c2;
     margin-top: 15%;
 }
 
@@ -23,10 +23,9 @@ h1 {
     display: flex;
     align-items: center;
     gap: 30px;
-    background: #222;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px #1333c2;
+   border: solid 2px;
 }
 
 .info-panel {
@@ -36,30 +35,37 @@ h1 {
 
 .info-panel p {
     margin: 15px 0;
-    text-shadow: 0 0 5px #1333c2;
+    
 }
 
 canvas {
     background-color: black;
     border: 4px solid white;
-    box-shadow: 0 0 15px #1333c2;
+   
 }
 
 button {
     margin-top: 20px;
     padding: 15px 30px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
     font-size: 18px;
-    background: linear-gradient(45deg, #1333c2, #1333c2);
     color: white;
-    border: none;
+    border: solid 1px;
     cursor: pointer;
     text-transform: uppercase;
     transition: 0.3s;
-    box-shadow: 0 0 10px #1333c2;
+   
+   
 }
 
 button:hover {
-    background: linear-gradient(45deg, #1333c2, #1333c2);
-    box-shadow: 0 0 20px #1333c2;
     transform: scale(1.05);
+    text-shadow: 0 0 10px #c5e72b, 0 0 20px #1333c2;
+   
+}
+
+p{
+    padding: 3px;
+    border: solid 1px rgb(255, 255, 255);
 }
