@@ -7,20 +7,65 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>TETRIS</h1>
+    <header>
+        <h1>TETRIS</h1>
+    </header>
 
-    <div class="game-container">
-        <div class="info-panel">
-            <p><strong>Score:</strong> <span id="score">0</span></p>
-            <p><strong>Nível:</strong> <span id="level">1</span></p>
-            <p><strong>Linhas:</strong> <span id="lines">0</span></p>
-        
+    <main>
+        <!-- Seção do Carrossel de imagens -->
+        <section class="carousel-container">
+            <div class="carousel">
+                <img src="Img-01.webp" alt="Tetris Frame 1" class="active">
+                <img src="Img-2.png" alt="Tetris Frame 2">
+                <img src="Img-3.jpg" alt="Tetris Frame 3">
+                <img src="Img-4.png" alt="Tetris Frame 4">
+            </div>
+        </section>
+
+        <!-- Seção de informações sobre o jogo -->
+        <section class="game-info">
+            <h2>Sobre o Jogo</h2>
+            <p>Tetris é um jogo clássico onde você precisa encaixar peças em uma grade, completando linhas para ganhar pontos. Desafie-se a alcançar a pontuação mais alta e torne-se um mestre do Tetris!</p>
+        </section>
+
+        <!-- Seção de instruções -->
+        <section class="instructions">
+            <h2>Como Jogar</h2>
+            <p>Use as setas do teclado para mover as peças:</p>
+            <ul>
+                <li>⬅️ Esquerda - Move a peça para a esquerda</li>
+                <li>➡️ Direita - Move a peça para a direita</li>
+                <li>⬇️ Baixo - Acelera a descida da peça</li>
+                <li>⬆️ Cima - Rotaciona a peça</li>
+            </ul>
+        </section>
+
+        <!-- Seção do jogo -->
+        <div class="game-container">
+            <div class="info-panel">
+                <p><strong>Score:</strong> <span id="score">0</span></p>
+                <p><strong>Nível:</strong> <span id="level">1</span></p>
+                <p><strong>Linhas:</strong> <span id="lines">0</span></p>
+            </div>
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
         </div>
 
-        <canvas id="gameCanvas" width="300" height="600"></canvas>
-    </div>
+        <button id="startButton">Iniciar Jogo</button>
+    </main>
 
-    <button id="startButton">Iniciar Jogo</button>
     <script src="script.js"></script>
+    <script>
+        // Script do carrossel automático
+        const carouselImages = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            carouselImages[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            carouselImages[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Troca de imagem a cada 3 segundos
+    </script>
 </body>
 </html>

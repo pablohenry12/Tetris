@@ -1,5 +1,7 @@
+/* Importação de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* Estilização geral */
 body {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
@@ -9,41 +11,58 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 h1 {
     font-size: 32px;
     text-shadow: 0 0 10px #c5e72b, 0 0 20px #1333c2;
-    margin-top: 15%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+/* Container principal */
 .game-container {
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
     border-radius: 10px;
-   border: solid 2px;
+    border: solid 2px;
+    width: 60%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto; 
 }
 
+/* Painel de informações */
 .info-panel {
-    text-align: left;
+    text-align: center;
     font-size: 14px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .info-panel p {
-    margin: 15px 0;
-    
+    margin: 10px 0;
+    padding: 5px;
+    border: solid 1px white;
 }
 
+/* Canvas do jogo */
 canvas {
     background-color: black;
     border: 4px solid white;
-   
+    max-width: 100%;
+    height: auto;
 }
 
+/* Botão de iniciar */
 button {
     margin-top: 20px;
     padding: 15px 30px;
@@ -55,17 +74,110 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     transition: 0.3s;
-   
-   
 }
 
 button:hover {
     transform: scale(1.05);
     text-shadow: 0 0 10px #c5e72b, 0 0 20px #1333c2;
-   
 }
 
-p{
-    padding: 3px;
-    border: solid 1px rgb(255, 255, 255);
+/* Carrossel de imagens */
+.carousel {
+    width: 60%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative; /* Alterado para relative */
+    margin: 20px auto; /* Centraliza o carrossel */
+    height: 300px; /* Altura fixa para o carrossel */
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%; /* Garante que as imagens ocupem todo o espaço do carrossel */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Seção de informações e regras */
+.game-info, .instructions {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* Centraliza as seções */
+    text-align: left;
+    padding: 10px;
+    border: solid 1px white;
+    border-radius: 10px;
+}
+
+.game-info h2, .instructions h2 {
+    font-size: 20px;
+    text-shadow: 0 0 5px #c5e72b, 0 0 10px #1333c2;
+}
+
+.game-info p, .instructions p, .instructions ul {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.instructions ul li {
+    margin: 10px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        gap: 15px;
+        width: 90%;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .info-panel {
+        max-width: 100%;
+    }
+
+    .game-info, .instructions {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .game-info h2, .instructions h2 {
+        font-size: 16px;
+    }
+
+    .game-info p, .instructions p, .instructions ul {
+        font-size: 10px;
+    }
 }
